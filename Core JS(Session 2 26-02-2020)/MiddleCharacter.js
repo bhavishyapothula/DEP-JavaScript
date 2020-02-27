@@ -1,3 +1,7 @@
+http://www.codewars.com/kata/get-the-middle-character
+
+
+
 function getMiddle(s)
 {
   var l=s.length;

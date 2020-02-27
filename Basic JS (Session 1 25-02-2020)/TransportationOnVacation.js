@@ -1,3 +1,6 @@
+http://www.codewars.com/kata/transportation-on-vacation
+
+
 function rentalCarCost(d) {
   var total=d*40;
   if(d>=7)

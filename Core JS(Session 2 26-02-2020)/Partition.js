@@ -1,3 +1,6 @@
+http://www.codewars.com/kata/partition-on
+
+
 function partitionOn(pred, items) {
 var tl=[],fl=[],i;
   for(i=0;i<items.length;i++)
