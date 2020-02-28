@@ -1,13 +1,11 @@
-http://www.codewars.com/kata/word-count
+/*Question Link - http://www.codewars.com/kata/word-count*/
 
-function countWords(str) {
-  // ...
-  str=str.trim();
-  if(str=="")
+function countWords(sentence) {
+  sentence=sentence.trim();
+  if(sentence=="") {
    return 0;
-   else
-   {
-  var arr=str.split(/\s+/);
-  return arr.length;
+   }else {
+      var wordArray=sentence.split(/\s+/);
+      return wordArray.length;
   }
 }

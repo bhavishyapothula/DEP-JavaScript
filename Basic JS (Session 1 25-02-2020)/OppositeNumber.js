@@ -1,4 +1,4 @@
-http://www.codewars.com/kata/opposite-number
+/* Question link - http://www.codewars.com/kata/opposite-number*/
 
 
 function opposite(number) {

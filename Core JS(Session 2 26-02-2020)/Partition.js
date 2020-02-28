@@ -1,29 +1,30 @@
-http://www.codewars.com/kata/partition-on
+/*Question Link - http://www.codewars.com/kata/partition-on*/
 
 
 function partitionOn(pred, items) {
-var tl=[],fl=[],i;
-  for(i=0;i<items.length;i++)
+var trueList=[],falseList=[],index;
+  for(index=0;index<items.length;index++)
   {
-    if(pred(items[i]))
-        tl.push(items[i]);
-    else
-       fl.push(items[i]);
-  }  
-  var j=0;
-  while(j<items.length)
-  {
-    for(i=0;i<fl.length;i++)
-    {
-      items[j]=fl[i];
-      j++;
+    if(pred(items[index])){
+        trueList.push(items[index]);
+    } else {
+       falseList.push(items[index]);
     }
-    for(i=0;i<tl.length;i++)
+  }  
+  var tempIndex=0;
+  while(tempIndex<items.length)
+  {
+    for(index=0;index<falseList.length;index++)
     {
-      items[j]=tl[i];
-      j++;
+      items[tempIndex]=falseList[index];
+      tempIndex++;
+    }
+    for(index=0;index<trueList.length;index++)
+    {
+      items[tempIndex]=trueList[index];
+      tempIndex++;
     }
     
   }
-return fl.length;
+return falseList.length;
 }

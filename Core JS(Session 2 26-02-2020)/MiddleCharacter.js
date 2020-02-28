@@ -1,18 +1,14 @@
-http://www.codewars.com/kata/get-the-middle-character
+/* Question Link - http://www.codewars.com/kata/get-the-middle-character*/
 
 
-
-function getMiddle(s)
-{
-  var l=s.length;
-  var middle=l/2;
-  if(l%2!=0)
-  {
+function getMiddle(word) {
+  var wordLength=word.length;
+  var middle=wordLength/2;
+  if(wordLength%2!=0) {
     
-    return s.charAt(middle);
+    return word.charAt(middle);
   }
-  else
-  {
-    return s.substring(middle-1,middle+1);
+  else {
+    return word.substring(middle-1,middle+1);
   }
 }

@@ -1,11 +1,12 @@
-http://www.codewars.com/kata/transportation-on-vacation
+/*Question Link - http://www.codewars.com/kata/transportation-on-vacation*/
 
 
-function rentalCarCost(d) {
-  var total=d*40;
-  if(d>=7)
-  total=total-50;
-  else if(d>=3)
-  total=total-20;
-  return total;
+function rentalCarCost(days) {
+  var totalFare=days*40;
+  if(days>=7){
+    totalFare=totalFare-50;
+  } else if(days>=3) {
+    totalFare=totalFare-20;
+  }
+  return totalFare;
 }
