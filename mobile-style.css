@@ -1,12 +1,4 @@
 
-body{
-   
-    background-color:#e8c6c6; 
-}
 #listingTable{
     flex-direction: column;
-}
-#searchkey
-{
-    width:75px;
 }

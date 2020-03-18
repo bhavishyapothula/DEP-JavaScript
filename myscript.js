@@ -55,8 +55,6 @@ function changePage(page)
     var btn_prev = document.getElementById("btn_prev");
     var listing_table = document.getElementById("listingTable");
     var page_span = document.getElementById("page");
- 
-    // Validate page
     if (page < 1) page = 1;
     if (page > numPages()) page = numPages();
 

@@ -3,10 +3,9 @@ body{
 }
  #searchkey {
 padding: 10px;
-/* font-size: 15px; */
 border: 1px solid grey;
 float: left;
-width: fit-content;
+width:85px;
 background: white;
 }
 #submit {
@@ -15,7 +14,6 @@ width: fit-content;
 padding: 10px;
 background-color: red;
 color: black;
-/* font-size: 15px; */
 border-left: none; 
 cursor: pointer;
 border-top: 0;
