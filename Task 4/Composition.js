@@ -6,7 +6,7 @@ Your task is to create a compose function to carry out this task, which will be 
 */
 
 function compose(f, g) {
-  return function() {
-    return f(g.apply(this, arguments));
-  };
+    return function() {
+        return f(g.apply(this, arguments));
+    };
 }

@@ -5,13 +5,13 @@ add(1)(2)(3)(4)(5); // 15
 */
 
 function add(number) {
-  let sum = number;
-  function innerAdd(m) {
-    sum += m;
+    let sum = number;
+    function innerAdd(m) {
+        sum += m;
+        return innerAdd;
+    }
+    innerAdd.valueOf = function() {
+        return sum;
+    };
     return innerAdd;
-  }
-  innerAdd.valueOf = function() {
-    return sum;
-  };
-  return innerAdd;
 }

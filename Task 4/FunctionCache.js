@@ -8,17 +8,17 @@ cachedFunction('foo', 'baz'); // should be executed, because the method wasn't i
 */
 
 function cache(func) {
-  let cacheObject = {};
-  let cacheArray = new Array();
-  return function(value1, value2) {
-    let argumentArray = [value1, value2];
-    let argumentPassed = JSON.stringify(argumentArray);
-    if (cacheArray.includes(argumentPassed)) {
-      return cacheObject[argumentPassed];
-    } else {
-      cacheArray.push(argumentPassed);
-      cacheObject[argumentPassed] = func(value1, value2);
-      return cacheObject[argumentPassed];
-    }
-  };
+    let cacheObject = {};
+    let cacheArray = new Array();
+    return function(value1, value2) {
+        let argumentArray = [value1, value2];
+        let argumentPassed = JSON.stringify(argumentArray);
+        if (cacheArray.includes(argumentPassed)) {
+            return cacheObject[argumentPassed];
+        } else {
+            cacheArray.push(argumentPassed);
+            cacheObject[argumentPassed] = func(value1, value2);
+            return cacheObject[argumentPassed];
+        }
+    };
 }

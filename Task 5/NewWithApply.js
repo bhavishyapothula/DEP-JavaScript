@@ -18,5 +18,5 @@ Your work is to implement the construct() function.
 */
 
 function construct(Class, ...arg) {
-  return new Class(...arg);
+    return new Class(...arg);
 }

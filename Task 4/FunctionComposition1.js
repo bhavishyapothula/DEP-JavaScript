@@ -6,5 +6,4 @@ const addOneMultTwo = (c) => multTwo(addOne(c))
 addOneMultTwo(5) // returns 12
 */
 
-const compose = (...functions) => args =>
-  functions.reduceRight((args, funcs) => funcs(args), args);
+const compose = (...functions) => args => functions.reduceRight((args, funcs) => funcs(args), args);
