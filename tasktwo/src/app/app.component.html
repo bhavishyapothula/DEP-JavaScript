@@ -1,0 +1,14 @@
+<div class="nav-bar">
+  <div routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <a routerLink="/">Home</a>
+  </div>
+  <div routerLinkActive="active"><a routerLink="active">Active</a></div>
+  <div routerLinkActive="active"><a routerLink="deleted">Deleted</a></div>
+  <div routerLinkActive="active"><a routerLink="manage">Manage</a></div>
+</div>
+
+<hr
+  style="width: 90%; margin-top: 5px; margin-bottom: 5px; border: none;border-top: 1px solid gainsboro;"
+/>
+
+<router-outlet></router-outlet>

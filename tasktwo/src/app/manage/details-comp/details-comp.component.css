@@ -1,0 +1,21 @@
+.activeuser {
+  border: 2px solid green;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 55px;
+}
+
+.passiveuser {
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 55px;
+}
+.active {
+  font-weight: bold;
+  color: green;
+}
+.deleted {
+  font-weight: bold;
+  color: red;
+}
