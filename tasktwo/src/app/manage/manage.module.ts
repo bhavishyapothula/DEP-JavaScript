@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ManageCompComponent } from './manage-comp/manage-comp.component';
 import { DetailsCompComponent } from './details-comp/details-comp.component';
 import { Routes, RouterModule } from '@angular/router';
+import { CombinePipe } from './combine.pipe';
 const manageRoutes: Routes = [
   {
     path: '',
@@ -13,7 +14,7 @@ const manageRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ManageCompComponent, DetailsCompComponent],
+  declarations: [ManageCompComponent, DetailsCompComponent, CombinePipe],
   imports: [CommonModule, RouterModule.forChild(manageRoutes)],
   exports: [ManageCompComponent, DetailsCompComponent]
 })

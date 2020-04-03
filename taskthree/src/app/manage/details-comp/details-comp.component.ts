@@ -16,12 +16,20 @@ export class DetailsCompComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const idParam = +this.route.snapshot.params['id'];
-
-    this.user = this.usersService.users.find(u => u.id === idParam);
-
     this.route.params.subscribe(param => {
-      this.user = this.usersService.users.find(u => u.id === +param['id']);
+      this.user = this.usersService.getUser(param['id']).subscribe(
+        data => {
+          this.user = data;
+          console.log(data);
+          console.log(this.user);
+        },
+        err => {
+          console.log(err);
+        },
+        () => {
+          console.log('Completed');
+        }
+      );
     });
   }
 }

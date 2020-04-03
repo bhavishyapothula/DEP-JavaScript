@@ -1,0 +1,25 @@
+div {
+  margin-bottom: 5px;
+}
+
+.active {
+  font-weight: 600;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
+  font-family: calibri;
+  font-size: x-large;
+}
+
+a {
+  text-decoration: none;
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,31 @@
+<div *ngIf="!user.isDeleted" class="activeuser">
+  <h5>{{ user?.firstName }} {{ user?.lastName }}</h5>
+  <div>
+    <p class="active">Active</p>
+  </div>
+
+  <div>Login Id: {{ user?.login }}</div>
+
+  <div>
+    Full Name: {{ user?.firstName | combine: user?.lastName | titlecase }}
+  </div>
+
+  <div>Age: {{ user?.age }}</div>
+  <div>Last Updated: {{ user?.updatedAt | date }}</div>
+</div>
+
+<div *ngIf="user.isDeleted" class="passiveuser">
+  <h5>{{ user?.firstName }} {{ user?.lastName }}</h5>
+  <div>
+    <p class="deleted">Deleted</p>
+  </div>
+
+  <div>Login Id: {{ user?.login }}</div>
+
+  <div>
+    Full Name: {{ user?.firstName | combine: user?.lastName | titlecase }}
+  </div>
+
+  <div>Age: {{ user?.age }}</div>
+  <div>Last Updated: {{ user?.updatedAt | date }}</div>
+</div>
