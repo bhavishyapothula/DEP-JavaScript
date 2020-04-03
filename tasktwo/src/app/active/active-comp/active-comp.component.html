@@ -1,0 +1,15 @@
+<div *ngFor="let user of usersList">
+  <div *ngIf="!user.isDeleted">
+    <div
+      class="card"
+      style="width: 80%;border:2px solid green ;margin: 5px 150px;"
+    >
+      <div class="card-body">
+        <h5 class="card-title">{{ user.firstName }} {{ user.lastName }}</h5>
+        <button class="btn btn-danger" style="margin-left: 90%;">
+          Deactivate
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

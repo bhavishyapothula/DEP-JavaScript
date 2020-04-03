@@ -1,0 +1,14 @@
+<div class="formdata">
+  <form class="container" [formGroup]="updateForm">
+    <div class="row">
+      Password <input type="text" formControlName="password" />
+    </div>
+    <div class="row">Age <input type="number" formControlName="age" /></div>
+  </form>
+  <div>
+    <br />
+    <button class="btn btn-primary" (click)="updateUser()">
+      Submit
+    </button>
+  </div>
+</div>
