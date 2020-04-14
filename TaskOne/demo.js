@@ -1,7 +1,8 @@
 const genhash = require("./hash.js");
+const fs = require("fs");
+
 const args = process.argv.slice(2);
 path = args[0];
-const fs = require("fs");
 const res = fs.statSync(path);
 if (res.isFile()) {
   getFileData(path);
@@ -28,12 +29,11 @@ function getDirectoryData(patharg) {
   });
 }
 function getFileData(filename) {
-  const result = fs.readFile(filename, (err, data) => {
-    if (err) {
-      console.log("error", err);
-      return;
-    }
-    console.log(filename + " :  " + data.toString());
-    genhash.generateHash(filename);
-  });
+  genhash.generateHash(filename, addToFile);
+  function addToFile(buff) {
+    fs.appendFile("write.txt", buff, function (err) {
+      if (err) throw err;
+      console.log(filename + "hash saved!");
+    });
+  }
 }

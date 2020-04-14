@@ -1,8 +1,10 @@
 var crypto = require("crypto");
+const fs = require("fs");
+
 var shaAlgorithm = "sha1";
 var mdAlgorithm = "md5";
-const fs = require("fs");
-function generateHash(filename) {
+
+function generateHash(filename, callback) {
   s = fs.ReadStream(filename);
   var shasum = crypto.createHash(shaAlgorithm);
   var mdsum = crypto.createHash(mdAlgorithm);
@@ -11,13 +13,10 @@ function generateHash(filename) {
     mdsum.update(data);
   });
   s.on("end", function () {
-    var shash = shasum.digest("hex");
-    var mhash = mdsum.digest("hex");
-    var buff = filename + "  " + shash + "  " + mhash + "\n";
-    fs.appendFile("write.txt", buff, function (err) {
-      if (err) throw err;
-      console.log(filename + " hash saved!");
-    });
+    var shaHash = shasum.digest("hex");
+    var mdHash = mdsum.digest("hex");
+    var buff = filename + "  " + shaHash + "  " + mdHash + "\n";
+    callback(buff);
   });
 }
 module.exports = {
