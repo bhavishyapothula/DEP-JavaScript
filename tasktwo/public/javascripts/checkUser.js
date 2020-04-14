@@ -9,7 +9,7 @@ function userPresent() {
       res.innerText = jsonData.message;
       if (jsonData.message) {
         signout.innerText = "Sign out";
-        myButton.innerText = "My Profile";
+        button.innerText = "My Profile";
       }
     });
   });

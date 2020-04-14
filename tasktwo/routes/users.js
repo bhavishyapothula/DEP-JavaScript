@@ -36,14 +36,23 @@ router.get("/posts", function (req, res, next) {
   return res.send(result);
 });
 
-router.get("/:username", function (req, res, next) {
-  const pathParams = req.params;
-  const user = getUser(pathParams.username);
-  if (req.cookies["username"] !== pathParams.username) {
-    res.sendFile(path.join(__dirname, "../", "public", "loginForm.html"));
-  } else {
+router.get(
+  "/:username",
+  function (req, res, next) {
+    const pathParams = req.params;
+    const user = getUser(pathParams.username);
+    if (
+      req.cookies["username"] === pathParams.username &&
+      req.cookies.auth_token
+    ) {
+      next();
+    } else {
+      res.sendFile(path.join(__dirname, "../", "public", "loginForm.html"));
+    }
+  },
+  function (req, res, next) {
     res.sendFile(path.join(__dirname, "../", "public", "postForm.html"));
   }
-});
+);
 
 module.exports = router;
