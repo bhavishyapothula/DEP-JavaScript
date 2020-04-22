@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body onload="getPost()">
+    <div class="jumbotron">
+      <center>
+        <img src="http://localhost:3000/images/fb.jpg" />
+        <div id="mail"></div>
+        <a href="/signout">Signout</a>
+      </center>
+    </div>
+    <center>
+      <form method="post" action="/users/posts/new">
+        <div class="form-group">
+          <textarea name="content" rows="4" cols="50"></textarea>
+        </div>
+        <button class="btn btn-primary">Post</button>
+      </form>
+      <div id="result"></div>
+    </center>
+  </body>
+  <script>
+    function getPost() {
+      const userUrl = `http://localhost:3000/users`;
+      const mail = document.getElementById("mail");
+      fetch(userUrl).then((data) => {
+        data.json().then((jsonData) => {
+          console.log(jsonData);
+          mail.innerText = jsonData.message;
+        });
+      });
+
+      const url = `http://localhost:3000/users/posts`;
+      const res = document.getElementById("result");
+
+      fetch(url).then((data) => {
+        data.json().then((jsonData) => {
+          console.log(jsonData);
+          res.innerText = jsonData.message;
+        });
+      });
+    }
+  </script>
+</html>
