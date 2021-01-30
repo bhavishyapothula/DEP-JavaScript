@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+    margin-top: 200px;
+}
+.grid-item {
+    background-color: black;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.toprcorner {
+    border-top-right-radius: 50px;
+}
+
+.bottomrcorner {
+    border-bottom-right-radius: 50px;
+}
+
+.toplcorner {
+    border-top-left-radius: 50px;
+}
+
+.bottomlcorner {
+    border-bottom-left-radius: 50px;
+}
+
+.space {
+    background-color: white;
+}
